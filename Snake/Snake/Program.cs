@@ -9,49 +9,34 @@ namespace Snake
 {
     class Program
     {
+        static void Draw(Figure figure)
+        {
+            figure.Drow();
+        }
       
         static void Main(string[] args)
         {
-            Console.SetWindowPosition(0, 0);
-            Console.SetWindowSize(80, 28);
-            Console.SetBufferSize(80,28);
-            
-            HorizontalLine leftLine = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine rightLine = new HorizontalLine(0, 78, 27, '+');
-            VerticalLine upLine = new VerticalLine(0, 27, 0, '+');
-            VerticalLine downLine = new VerticalLine(0, 27, 78, '+');
-            leftLine.Drow();
-            rightLine.Drow();
-            upLine.Drow();
-            downLine.Drow();
+            VerticalLine vl = new VerticalLine(0, 10, 5, '%');
+            Draw(vl);
 
-            //Отрисовка точек
             Point p = new Point(4, 5, '*');
-            Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Drow();
+            Figure fSnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(fSnake);
+            Snake snake = (Snake)fSnake;
 
-            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
-            Point food = foodCreator.CreatFood();
-            food.Draw();
+            HorizontalLine hl = new HorizontalLine(0, 5, 6, '&');
 
-            while(true)
+            List<Figure> figures = new List<Figure>();
+            figures.Add(fSnake);
+            figures.Add(vl);
+            figures.Add(hl);
+
+            foreach(var f in figures)
             {
-                if(snake.Eat(food))
-                {
-                    food = foodCreator.CreatFood();
-                    food.Draw();
-                }
-                else
-                {
-                    snake.Move();
-                }
-                Thread.Sleep(100);
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);
-                }
+                f.Drow();
             }
+
+            Console.ReadLine();
         }
     }
 }
