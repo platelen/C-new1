@@ -11,17 +11,24 @@ namespace Snake
       
         static void Main(string[] args)
         {
-            Point p1 = new Point(1,3,'*');
-            p1.Draw();
+            Console.SetWindowPosition(0, 0);
+            Console.SetWindowSize(80, 28);
+            Console.SetBufferSize(80,28);
+            
+            HorizontalLine leftLine = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine rightLine = new HorizontalLine(0, 78, 27, '+');
+            VerticalLine upLine = new VerticalLine(0, 27, 0, '+');
+            VerticalLine downLine = new VerticalLine(0, 27, 78, '+');
+            leftLine.Drow();
+            rightLine.Drow();
+            upLine.Drow();
+            downLine.Drow();
 
-            Point p2 = new Point(4,5,'*');
-            p2.Draw();
-
-            HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
-            line.Drow();
+            //Отрисовка точек
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
             Console.ReadLine();
-
         }
     }
 }
