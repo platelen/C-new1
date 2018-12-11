@@ -13,6 +13,7 @@ namespace GuessMelody
     public partial class fMain : Form
     {
         fSettings fS = new fSettings();
+        fGame fg = new fGame();
 
         public fMain()
         {
@@ -27,6 +28,11 @@ namespace GuessMelody
         private void btSettings_Click(object sender, EventArgs e)
         {
             fS.ShowDialog();
+        }
+
+        private void btPlay_Click(object sender, EventArgs e)
+        {
+            fg.ShowDialog();
         }
     }
 }

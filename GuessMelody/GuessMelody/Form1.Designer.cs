@@ -42,6 +42,7 @@
             this.btPlay.TabIndex = 0;
             this.btPlay.Text = "Начать новую игру";
             this.btPlay.UseVisualStyleBackColor = true;
+            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
             // 
             // btSettings
             // 
