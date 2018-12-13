@@ -112,7 +112,9 @@ namespace GuessMelody
             if (e.KeyData == Keys.Q)
             {
                 GamePause();
-                if(MessageBox.Show("Правильный ответ ?","Игрок 1",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                fMessage fm = new fMessage();
+                fm.lbMessage.Text = "Игрок 1";
+                if(fm.ShowDialog()==DialogResult.Yes)
                 {
                     lbCounter1.Text = Convert.ToString(Convert.ToUInt32(lbCounter1.Text) + 1);
                     MakeMusic();
@@ -122,7 +124,9 @@ namespace GuessMelody
             if (e.KeyData == Keys.P)
             {
                 GamePause();
-                if (MessageBox.Show("Правильный ответ ?", "Игрок 2", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                fMessage fm = new fMessage();
+                fm.lbMessage.Text = "Игрок 2";
+                if (fm.ShowDialog()== DialogResult.Yes)
                 {
                     lbCounter2.Text = Convert.ToString(Convert.ToUInt32(lbCounter2.Text) + 1);
                     MakeMusic();
@@ -134,6 +138,20 @@ namespace GuessMelody
         private void lblMusicDuraction_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WMP_OpenStateChange(object sender, AxWMPLib._WMPOCXEvents_OpenStateChangeEvent e)
+        {
+            if(Victorina.randomStart==true)
+            if(WMP.openState==WMPLib.WMPOpenState.wmposMediaOpen)
+                {
+                    WMP.Ctlcontrols.currentPosition = rnd.Next(0, (int)WMP.currentMedia.duration / 2);
+                }
         }
     }
 }
