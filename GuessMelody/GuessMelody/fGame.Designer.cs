@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
             this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.btNext = new System.Windows.Forms.Button();
@@ -36,7 +37,10 @@
             this.lbCounter1 = new System.Windows.Forms.Label();
             this.lbCounter2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btContinue = new System.Windows.Forms.Button();
+            this.lbMelodyCount = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,16 +116,40 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Пауза";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btContinue
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(330, 186);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 42);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Продолжить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btContinue.Location = new System.Drawing.Point(330, 186);
+            this.btContinue.Name = "btContinue";
+            this.btContinue.Size = new System.Drawing.Size(126, 42);
+            this.btContinue.TabIndex = 7;
+            this.btContinue.Text = "Продолжить";
+            this.btContinue.UseVisualStyleBackColor = true;
+            this.btContinue.Click += new System.EventHandler(this.btContinue_Click);
+            // 
+            // lbMelodyCount
+            // 
+            this.lbMelodyCount.AutoSize = true;
+            this.lbMelodyCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbMelodyCount.Location = new System.Drawing.Point(224, 97);
+            this.lbMelodyCount.Name = "lbMelodyCount";
+            this.lbMelodyCount.Size = new System.Drawing.Size(19, 20);
+            this.lbMelodyCount.TabIndex = 8;
+            this.lbMelodyCount.Text = "0";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(37, 145);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(419, 23);
+            this.progressBar1.TabIndex = 9;
+            this.progressBar1.Value = 50;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fGame
             // 
@@ -129,7 +157,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GuessMelody.Properties.Resources.music;
             this.ClientSize = new System.Drawing.Size(477, 364);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.lbMelodyCount);
+            this.Controls.Add(this.btContinue);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbCounter2);
             this.Controls.Add(this.lbCounter1);
@@ -157,6 +187,9 @@
         private System.Windows.Forms.Label lbCounter1;
         private System.Windows.Forms.Label lbCounter2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btContinue;
+        private System.Windows.Forms.Label lbMelodyCount;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
