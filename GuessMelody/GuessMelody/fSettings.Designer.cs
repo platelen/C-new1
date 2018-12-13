@@ -35,6 +35,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btOK = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbGameDuration = new System.Windows.Forms.ComboBox();
+            this.cbMusicDuration = new System.Windows.Forms.ComboBox();
+            this.cbRandomStart = new System.Windows.Forms.CheckBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btSelectFolder
@@ -82,9 +89,9 @@
             // 
             // btOK
             // 
-            this.btOK.Location = new System.Drawing.Point(106, 251);
+            this.btOK.Location = new System.Drawing.Point(106, 313);
             this.btOK.Name = "btOK";
-            this.btOK.Size = new System.Drawing.Size(75, 23);
+            this.btOK.Size = new System.Drawing.Size(75, 35);
             this.btOK.TabIndex = 4;
             this.btOK.Text = "OK";
             this.btOK.UseVisualStyleBackColor = true;
@@ -92,20 +99,94 @@
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(241, 251);
+            this.btCancel.Location = new System.Drawing.Point(241, 313);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.Size = new System.Drawing.Size(75, 35);
             this.btCancel.TabIndex = 5;
             this.btCancel.Text = "Отмена";
             this.btCancel.UseVisualStyleBackColor = true;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbRandomStart);
+            this.groupBox1.Controls.Add(this.cbMusicDuration);
+            this.groupBox1.Controls.Add(this.cbGameDuration);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(106, 195);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(210, 99);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Настройки игры";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Продолжительность игры";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Время на ответ";
+            // 
+            // cbGameDuration
+            // 
+            this.cbGameDuration.FormattingEnabled = true;
+            this.cbGameDuration.Items.AddRange(new object[] {
+            "120",
+            "90",
+            "60",
+            "40",
+            "20",
+            "15",
+            "10",
+            "5"});
+            this.cbGameDuration.Location = new System.Drawing.Point(152, 19);
+            this.cbGameDuration.Name = "cbGameDuration";
+            this.cbGameDuration.Size = new System.Drawing.Size(35, 21);
+            this.cbGameDuration.TabIndex = 2;
+            // 
+            // cbMusicDuration
+            // 
+            this.cbMusicDuration.FormattingEnabled = true;
+            this.cbMusicDuration.Items.AddRange(new object[] {
+            "40",
+            "20",
+            "15",
+            "10",
+            "5"});
+            this.cbMusicDuration.Location = new System.Drawing.Point(152, 48);
+            this.cbMusicDuration.Name = "cbMusicDuration";
+            this.cbMusicDuration.Size = new System.Drawing.Size(35, 21);
+            this.cbMusicDuration.TabIndex = 3;
+            // 
+            // cbRandomStart
+            // 
+            this.cbRandomStart.AutoSize = true;
+            this.cbRandomStart.Location = new System.Drawing.Point(9, 76);
+            this.cbRandomStart.Name = "cbRandomStart";
+            this.cbRandomStart.Size = new System.Drawing.Size(183, 17);
+            this.cbRandomStart.TabIndex = 4;
+            this.cbRandomStart.Text = "Начинать со случайного места";
+            this.cbRandomStart.UseVisualStyleBackColor = true;
             // 
             // fSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GuessMelody.Properties.Resources.music;
-            this.ClientSize = new System.Drawing.Size(433, 286);
+            this.ClientSize = new System.Drawing.Size(447, 378);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.listBox1);
@@ -115,6 +196,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fSettings";
             this.Text = "Настройки";
+            this.Load += new System.EventHandler(this.fSettings_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +212,11 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btOK;
         private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbMusicDuration;
+        private System.Windows.Forms.ComboBox cbGameDuration;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbRandomStart;
     }
 }

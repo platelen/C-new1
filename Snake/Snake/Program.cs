@@ -35,9 +35,11 @@ namespace Snake
             while(true)
             {
                 if ((walls.IsHit(snake)) || snake.IsHitTail())
-                    {
+                 {
+                    Console.WriteLine("Ты проиграл");
+                    Console.ReadLine();
                     break;
-                    }
+                 }
                 if(snake.Eat(food))
                 {
                     food = foodCreator.CreatFood();
