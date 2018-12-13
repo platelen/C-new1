@@ -41,6 +41,7 @@
             this.lbMelodyCount = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblMusicDuraction = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,12 +152,24 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblMusicDuraction
+            // 
+            this.lblMusicDuraction.AutoSize = true;
+            this.lblMusicDuraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblMusicDuraction.Location = new System.Drawing.Point(224, 27);
+            this.lblMusicDuraction.Name = "lblMusicDuraction";
+            this.lblMusicDuraction.Size = new System.Drawing.Size(19, 20);
+            this.lblMusicDuraction.TabIndex = 10;
+            this.lblMusicDuraction.Text = "0";
+            this.lblMusicDuraction.Click += new System.EventHandler(this.lblMusicDuraction_Click);
+            // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GuessMelody.Properties.Resources.music;
             this.ClientSize = new System.Drawing.Size(477, 364);
+            this.Controls.Add(this.lblMusicDuraction);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lbMelodyCount);
             this.Controls.Add(this.btContinue);
@@ -168,10 +181,12 @@
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.WMP);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "fGame";
             this.Text = "Игра";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
             this.Load += new System.EventHandler(this.fGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,5 +206,6 @@
         private System.Windows.Forms.Label lbMelodyCount;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblMusicDuraction;
     }
 }

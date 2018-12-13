@@ -61,5 +61,10 @@ namespace GuessMelody
             listBox1.Items.Clear();
             listBox1.Items.AddRange(Victorina.list.ToArray());
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

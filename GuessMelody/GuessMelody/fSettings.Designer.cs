@@ -41,6 +41,10 @@
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.cbMusicDuration = new System.Windows.Forms.ComboBox();
             this.cbRandomStart = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             // 
             this.btSelectFolder.BackColor = System.Drawing.Color.Black;
             this.btSelectFolder.ForeColor = System.Drawing.Color.Gold;
-            this.btSelectFolder.Location = new System.Drawing.Point(106, 127);
+            this.btSelectFolder.Location = new System.Drawing.Point(12, 173);
             this.btSelectFolder.Name = "btSelectFolder";
             this.btSelectFolder.Size = new System.Drawing.Size(75, 39);
             this.btSelectFolder.TabIndex = 0;
@@ -60,7 +64,7 @@
             // 
             this.btClearList.BackColor = System.Drawing.Color.Black;
             this.btClearList.ForeColor = System.Drawing.Color.Gold;
-            this.btClearList.Location = new System.Drawing.Point(241, 127);
+            this.btClearList.Location = new System.Drawing.Point(152, 173);
             this.btClearList.Name = "btClearList";
             this.btClearList.Size = new System.Drawing.Size(75, 39);
             this.btClearList.TabIndex = 1;
@@ -72,7 +76,7 @@
             this.cbAllDirectoty.AutoSize = true;
             this.cbAllDirectoty.BackColor = System.Drawing.Color.Transparent;
             this.cbAllDirectoty.ForeColor = System.Drawing.Color.Gold;
-            this.cbAllDirectoty.Location = new System.Drawing.Point(155, 172);
+            this.cbAllDirectoty.Location = new System.Drawing.Point(303, 173);
             this.cbAllDirectoty.Name = "cbAllDirectoty";
             this.cbAllDirectoty.Size = new System.Drawing.Size(118, 17);
             this.cbAllDirectoty.TabIndex = 2;
@@ -84,14 +88,14 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 13);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(409, 108);
+            this.listBox1.Size = new System.Drawing.Size(409, 160);
             this.listBox1.TabIndex = 3;
             // 
             // btOK
             // 
-            this.btOK.Location = new System.Drawing.Point(106, 313);
+            this.btOK.Location = new System.Drawing.Point(346, 293);
             this.btOK.Name = "btOK";
-            this.btOK.Size = new System.Drawing.Size(75, 35);
+            this.btOK.Size = new System.Drawing.Size(75, 26);
             this.btOK.TabIndex = 4;
             this.btOK.Text = "OK";
             this.btOK.UseVisualStyleBackColor = true;
@@ -99,9 +103,9 @@
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(241, 313);
+            this.btCancel.Location = new System.Drawing.Point(346, 339);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(75, 35);
+            this.btCancel.Size = new System.Drawing.Size(75, 27);
             this.btCancel.TabIndex = 5;
             this.btCancel.Text = "Отмена";
             this.btCancel.UseVisualStyleBackColor = true;
@@ -109,17 +113,22 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbRandomStart);
             this.groupBox1.Controls.Add(this.cbMusicDuration);
             this.groupBox1.Controls.Add(this.cbGameDuration);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(106, 195);
+            this.groupBox1.Location = new System.Drawing.Point(12, 240);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(210, 99);
+            this.groupBox1.Size = new System.Drawing.Size(315, 126);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки игры";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
@@ -180,6 +189,42 @@
             this.cbRandomStart.Text = "Начинать со случайного места";
             this.cbRandomStart.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(204, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Игрок 1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(204, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Игрок 2";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(259, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(32, 21);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Q";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(259, 51);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(32, 21);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.Text = "P";
+            // 
             // fSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,5 +263,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbRandomStart;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
